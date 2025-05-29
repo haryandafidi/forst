@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forst Parfume</title>
   <style>
     body {
@@ -43,19 +43,25 @@
       text-decoration: none;
     }
 
-    .instagram { background: #C13584; }
-    .shopee { background: #ee4d2d; }
-    .whatsapp { background: #25d366; }
+    .instagram {
+      background: #c13584;
+    }
+    .shopee {
+      background: #ee4d2d;
+    }
+    .whatsapp {
+      background: #25d366;
+    }
 
     /* Produk Card */
-     .produk-section-forst {
+    .produk-section-forst {
       padding: 40px 20px;
-      background-image: url('bg2.jpg'); 
+      background-image: url('bg2.jpg');
       background-size: cover;
       background-position: center;
-      color: #fff ; 
-     } 
-    
+      color: #fff;
+    }
+
     .produk-section {
       padding: 40px 20px;
       background-image: url('bg2.jpg');
@@ -71,18 +77,17 @@
       gap: 20px;
       padding-bottom: 10px;
     }
-    
+
     .card {
       min-width: 250px;
       flex: 0 0 auto;
       scroll-snap-align: start;
     }
 
-
     .card {
       background-color: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: 0.3s;
     }
@@ -96,7 +101,7 @@
       height: 200px;
       object-fit: cover;
     }
-  
+
     .card-volume {
       font-size: 14px;
       color: #333;
@@ -128,15 +133,70 @@
       border-radius: 6px;
       text-decoration: none;
       font-size: 14px;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
     }
 
     .card-btn:hover {
       background-color: #0056b3;
     }
+
+    /* Popup style */
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1000;
+      text-align: center;
+      color: #000;
+    }
+
+    #popup button {
+      margin: 10px 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    #popup .shopee-btn {
+      background-color: #ee4d2d;
+    }
+
+    #popup .wa-btn {
+      background-color: #25d366;
+    }
+
+    #popup .close-btn {
+      background: #888;
+      margin-top: 15px;
+      padding: 6px 15px;
+      font-size: 14px;
+    }
+
+    /* Overlay */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 900;
+    }
   </style>
 </head>
 <body>
-
   <div class="content">
     <h1>Forst Parfume</h1>
     <p>Temukan aroma terbaik dari kami</p>
@@ -150,108 +210,172 @@
     <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
     <div class="produk-container">
       <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular">
+        <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
         <div class="card-body">
           <div class="card-title">Regular</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <div class="card">
-        <img src="sotb1.jpg" alt="Classic Forst">
+        <img src="sotb1.jpg" alt="Classic Forst" />
         <div class="card-body">
           <div class="card-title">Classic Forst</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <div class="card">
-        <img src="miniforst.jpg" alt="MINI FORST">
+        <img src="miniforst.jpg" alt="MINI FORST" />
         <div class="card-body">
           <div class="card-title">Mini Forst</div>
           <div class="card-volume">15 ml</div>
           <div class="card-price">Rp 29.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- Produk Section -->
   <div class="produk-section">
     <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
     <div class="produk-container">
       <!-- Card 1 -->
       <div class="card">
-        <img src="summerblack.jpg" alt="Summer Black">
+        <img src="summerblack.jpg" alt="Summer Black" />
         <div class="card-body">
           <div class="card-title">Summer black</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://shopee.co.id/Parfume-Best-Seller-Forst-Parfume-aroma-tahan-lama-i.344739650.28615893762" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Parfume-Best-Seller-Forst-Parfume-aroma-tahan-lama-i.344739650.28615893762" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="card">
-        <img src="sotb1.jpg" alt="S.O.T.B">
+        <img src="sotb1.jpg" alt="S.O.T.B" />
         <div class="card-body">
           <div class="card-title">S.O.T.B</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="card">
-        <img src="skypulse1.jpg" alt="Sky Pulse">
+        <img src="skypulse1.jpg" alt="Sky Pulse" />
         <div class="card-body">
           <div class="card-title">Sky Pulse</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="card">
-        <img src="axioncreed.jpg" alt="Axion Creed">
+        <img src="axioncreed.jpg" alt="Axion Creed" />
         <div class="card-body">
           <div class="card-title">Axion creed</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <!-- Card 5 -->
       <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon">
+        <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon" />
         <div class="card-body">
           <div class="card-title">Pink Chiffon</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
 
       <!-- Card 6 -->
       <div class="card">
-        <img src="SCANDALOUS.jpg" alt="Scandalous">
+        <img src="SCANDALOUS.jpg" alt="Scandalous" />
         <div class="card-body">
           <div class="card-title">Scandalous</div>
           <div class="card-volume">30 ml</div>
           <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382" target="_blank" class="card-btn">Pesan Sekarang</a>
+          <a href="#" class="card-btn" data-shopee="https://shopee.co.id/Tokosiniajala" data-wa="https://wa.me/6281396058382">Pesan Sekarang</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Popup and overlay -->
+  <div id="overlay"></div>
+  <div id="popup">
+    <p>Pilih cara pemesanan:</p>
+    <button class="shopee-btn">Shopee</button>
+    <button class="wa-btn">WhatsApp</button>
+    <br />
+    <button class="close-btn">Batal</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+    const shopeeBtn = popup.querySelector('.shopee-btn');
+    const waBtn = popup.querySelector('.wa-btn');
+    const closeBtn = popup.querySelector('.close-btn');
+
+    let currentShopeeLink = '';
+    let currentWaLink = '';
+
+    // Fungsi buka popup
+    function openPopup(shopeeLink, waLink) {
+      currentShopeeLink = shopeeLink;
+      currentWaLink = waLink;
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+
+    // Fungsi tutup popup
+    function closePopup() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+      currentShopeeLink = '';
+      currentWaLink = '';
+    }
+
+    // Event tombol Shopee dan WA
+    shopeeBtn.addEventListener('click', () => {
+      if (currentShopeeLink) {
+        window.open(currentShopeeLink, '_blank');
+        closePopup();
+      }
+    });
+
+    waBtn.addEventListener('click', () => {
+      if (currentWaLink) {
+        window.open(currentWaLink, '_blank');
+        closePopup();
+      }
+    });
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup);
+
+    // Pasang event listener ke semua tombol pesan sekarang
+    document.querySelectorAll('.card-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const shopeeLink = btn.getAttribute('data-shopee');
+        const waLink = btn.getAttribute('data-wa');
+        openPopup(shopeeLink, waLink);
+      });
+    });
+  </script>
 </body>
 </html>
