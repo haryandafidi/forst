@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-image: url('bg3.jpg');
+      background-image: url('bg3.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -55,7 +55,7 @@
 
     .produk-section-forst, .produk-section {
       padding: 40px 20px;
-      background-image: url('bg2.jpg');
+      background-image: url('bg2.jpg'); /* Pastikan bg2.jpg ada di lokasi yang benar */
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -126,6 +126,23 @@
     .card-btn:hover {
       background-color: #0056b3;
     }
+
+    /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
+    .hero-section-image {
+        width: 100%;       /* Pastikan kontainer mengambil lebar penuh */
+        overflow: hidden;  /* Mencegah scrollbar jika gambar terlalu besar */
+        /* Anda bisa menambahkan padding-top/bottom jika ingin ada jarak di atas/bawah gambar */
+        /* padding: 20px 0; */
+    }
+
+    .hero-section-image img {
+        display: block;    /* Menghilangkan spasi ekstra di bawah gambar */
+        width: 100%;       /* Membuat gambar mengisi lebar penuh kontainer */
+        height: auto;      /* Mempertahankan rasio aspek gambar */
+        max-width: 100%;   /* Memastikan gambar tidak melebihi lebar aslinya jika kontainer lebih besar */
+    }
+    /* --- AKHIR KODE CSS UNTUK HERO SECTION --- */
+
   </style>
 </head>
 <body>
@@ -138,7 +155,9 @@
     <a href="https://wa.me/6281396058382" target="_blank" class="button whatsapp">Hubungi Admin (WhatsApp)</a>
   </div>
 
-  <!-- Produk Forst -->
+  <section class="hero-section-image">
+      <img src="baner golden.jpg" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
+  </section>
   <div class="produk-section-forst">
     <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
     <div class="produk-container">
@@ -174,7 +193,6 @@
     </div>
   </div>
 
-  <!-- Produk Unggulan -->
   <div class="produk-section">
     <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
     <div class="produk-container">
