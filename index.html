@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forst Parfume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* --- CSS Umum (dari kode Anda) --- */
     body {
       font-family: Arial, sans-serif;
       background-image: url('bg3.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
@@ -127,135 +129,384 @@
       background-color: #0056b3;
     }
 
-    /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
+    /* --- CSS untuk Header Baru (Sesuai image_261779.png) --- */
+    .main-header {
+        width: 100%;
+        background-color: #fff; /* Default putih */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .top-bar {
+        background-color: #A88F6D; /* Warna cokelat sesuai gambar */
+        color: #fff;
+        padding: 8px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+    }
+
+    .top-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    .top-menu .dropdown {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .top-menu .dropdown i {
+        margin-left: 5px;
+    }
+
+    .top-menu .login-register {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .top-menu .login-register:hover {
+        color: #eee;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        max-width: 1200px; /* Batasi lebar konten header */
+        margin: 0 auto; /* Pusatkan header */
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .logo img {
+        height: 40px; /* Sesuaikan tinggi logo Anda */
+        width: auto;
+    }
+
+    .logo-text {
+        font-family: 'Arial', sans-serif; /* Sesuaikan font jika Anda pakai font khusus */
+        font-size: 0.8em;
+        color: #A88F6D; /* Warna teks "PERFUME STORE" */
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .search-bar-container {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        overflow: hidden;
+        height: 40px; /* Tinggi search bar */
+    }
+
+    .search-bar-container input[type="text"] {
+        border: none;
+        padding: 8px 15px;
+        font-size: 1em;
+        flex-grow: 1; 
+        outline: none;
+        color: #333;
+    }
+
+    .search-bar-container select {
+        border: none;
+        padding: 0 10px;
+        background-color: #fff;
+        cursor: pointer;
+        outline: none;
+        color: #555;
+        border-left: 1px solid #eee;
+    }
+
+    .search-bar-container .search-button {
+        background-color: #A88F6D; 
+        border: none;
+        padding: 0 15px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-bar-container .search-button:hover {
+        background-color: #8D775A; 
+    }
+
+    .user-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .user-actions a {
+        color: #A88F6D; 
+        font-size: 1.4em;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .user-actions a:hover {
+        color: #8D775A;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #ee4d2d; 
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.7em;
+        line-height: 1;
+    }
+
+    /* --- CSS untuk Teks Bergerak --- */
+    .moving-text-container {
+        width: 100%;
+        overflow: hidden; 
+        background-color: #f0f0f0; 
+        padding: 5px 0;
+        white-space: nowrap; 
+        box-sizing: border-box; 
+    }
+
+    .moving-text {
+        display: inline-block; 
+        padding-left: 100%; 
+        animation: marquee 15s linear infinite; 
+        color: #333; 
+        font-weight: bold;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); } 
+        100% { transform: translateX(-100%); } 
+    }
+
+    /* --- CSS untuk Hero Section dengan Video Background --- */
     .hero-section-image {
-        width: 100%;       /* Pastikan kontainer mengambil lebar penuh */
-        overflow: hidden;  /* Mencegah scrollbar jika gambar terlalu besar */
-        /* Anda bisa menambahkan padding-top/bottom jika ingin ada jarak di atas/bawah gambar */
-        /* padding: 20px 0; */
+        width: 100%;
+        position: relative; 
+        overflow: hidden;
+        height: auto; 
     }
 
-    .hero-section-image img {
-        display: block;    /* Menghilangkan spasi ekstra di bawah gambar */
-        width: 100%;       /* Membuat gambar mengisi lebar penuh kontainer */
-        height: auto;      /* Mempertahankan rasio aspek gambar */
-        max-width: 100%;   /* Memastikan gambar tidak melebihi lebar aslinya jika kontainer lebih besar */
+    .hero-section-image video {
+        width: 100%;
+        height: auto;
+        display: block; 
+        object-fit: cover; 
     }
-    /* --- AKHIR KODE CSS UNTUK HERO SECTION --- */
 
+    /* --- Media Queries untuk Responsivitas Header --- */
+    @media (max-width: 992px) {
+        .main-nav {
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 20px;
+        }
+        .logo {
+            flex-basis: 100%; 
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .search-bar-container {
+            width: 100%; 
+            max-width: 500px;
+        }
+        .user-actions {
+            flex-basis: 100%; 
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px 15px;
+        }
+        .top-menu {
+            flex-direction: column;
+            gap: 5px;
+        }
+        .main-nav {
+            padding: 10px 15px;
+        }
+        .search-bar-container {
+            height: 35px;
+        }
+    }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Forst Parfume</h1>
-    <p>Temukan aroma terbaik dari kami</p>
 
-    <a href="https://www.instagram.com/Forst_hs" target="_blank" class="button instagram">Instagram</a>
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="button shopee">Shopee</a>
-    <a href="https://wa.me/6281396058382" target="_blank" class="button whatsapp">Hubungi Admin (WhatsApp)</a>
-  </div>
-
-  <section class="hero-section-image">
-      <img src="baner golden.jpg" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
-  </section>
-  <div class="produk-section-forst">
-    <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
-    <div class="produk-container">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
-        <div class="card-body">
-          <div class="card-title">Regular</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Regular%2030%20ml" class="card-btn">Pesan Sekarang</a>
+    <header class="main-header">
+        <div class="top-bar">
+            <span class="welcome-text">Welcome to our online store!</span>
+            <div class="top-menu">
+                <div class="dropdown">
+                    English (USD) <i class="fas fa-chevron-down"></i>
+                </div>
+                <a href="#" class="login-register">Login or Register</a>
+            </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="sotb1.jpg" alt="Classic Forst" />
-        <div class="card-body">
-          <div class="card-title">Classic Forst</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Classic%20Forst%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="moving-text-container">
+            <span class="moving-text">🎉 Promo Spesial! Diskon 20% untuk semua parfum! Hanya hari ini! 🎉</span>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="miniforst.jpg" alt="Mini Forst" />
-        <div class="card-body">
-          <div class="card-title">Mini Forst</div>
-          <div class="card-volume">15 ml</div>
-          <div class="card-price">Rp 29.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Mini%20Forst%2015%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="main-nav">
+            <div class="logo">
+                <img src="path/to/stelina-logo.png" alt="STELINA Perfume Store Logo">
+                <span class="logo-text">PERFUME STORE</span>
+            </div>
+            
+            <div class="search-bar-container">
+                <input type="text" id="searchInput" placeholder="Search here">
+                <select>
+                    <option>Accessories</option>
+                    <option>Fragrances</option>
+                    <option>Body Care</option>
+                </select>
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#" class="user-icon">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+      <h1>Forst Parfume</h1>
+      <p>Temukan aroma terbaik dari kami</p>
+
+      <a href="https://www.instagram.com/Forst_hs" target="_blank" class="button instagram">Instagram</a>
+      <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="button shopee">Shopee</a>
+      <a href="https://wa.me/6281396058382" target="_blank" class="button whatsapp">Hubungi Admin (WhatsApp)</a>
+    </div>
+
+    <section class="hero-section-image">
+        <video autoplay loop muted playsinline poster="goldenvidio.mp4">
+            <source src="goldenvidio.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+        </section>
+    <div class="produk-section-forst">
+      <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
+      <div class="produk-container">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
+          <div class="card-body">
+            <div class="card-title">Regular</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 55.000</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Regular%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="sotb1.jpg" alt="Classic Forst" />
+          <div class="card-body">
+            <div class="card-title">Classic Forst</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Classic%20Forst%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="miniforst.jpg" alt="Mini Forst" />
+          <div class="card-body">
+            <div class="card-title">Mini Forst</div>
+            <div class="card-volume">15 ml</div>
+            <div class="card-price">Rp 29.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Mini%20Forst%2015%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="produk-section">
-    <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
-    <div class="produk-container">
-      <div class="card">
-        <img src="summerblack.jpg" alt="Summer Black" />
-        <div class="card-body">
-          <div class="card-title">Summer Black</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Summer%20Black%2030%20ml" class="card-btn">Pesan Sekarang</a>
+    <div class="produk-section">
+      <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
+      <div class="produk-container">
+        <div class="card">
+          <img src="summerblack.jpg" alt="Summer Black" />
+          <div class="card-body">
+            <div class="card-title">Summer Black</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Summer%20Black%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="sotb1.jpg" alt="S.O.T.B" />
-        <div class="card-body">
-          <div class="card-title">S.O.T.B</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20S.O.T.B%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="card">
+          <img src="sotb1.jpg" alt="S.O.T.B" />
+          <div class="card-body">
+            <div class="card-title">S.O.T.B</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20S.O.T.B%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="skypulse1.jpg" alt="Sky Pulse" />
-        <div class="card-body">
-          <div class="card-title">Sky Pulse</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Sky%20Pulse%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="card">
+          <img src="skypulse1.jpg" alt="Sky Pulse" />
+          <div class="card-body">
+            <div class="card-title">Sky Pulse</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Sky%20Pulse%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="axioncreed.jpg" alt="Axion Creed" />
-        <div class="card-body">
-          <div class="card-title">Axion Creed</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Axion%20Creed%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="card">
+          <img src="axioncreed.jpg" alt="Axion Creed" />
+          <div class="card-body">
+            <div class="card-title">Axion Creed</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Axion%20Creed%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon" />
-        <div class="card-body">
-          <div class="card-title">Pink Chiffon</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Pink%20Chiffon%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon" />
+          <div class="card-body">
+            <div class="card-title">Pink Chiffon</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 69.900</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Pink%20Chiffon%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="SCANDALOUS.jpg" alt="Scandalous" />
-        <div class="card-body">
-          <div class="card-title">Scandalous</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Scandalous%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        <div class="card">
+          <img src="SCANDALOUS.jpg" alt="Scandalous" />
+          <div class="card-body">
+            <div class="card-title">Scandalous</div>
+            <div class="card-volume">30 ml</div>
+            <div class="card-price">Rp 55.000</div>
+            <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Scandalous%2030%20ml" class="card-btn">Pesan Sekarang</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 </html>
