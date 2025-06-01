@@ -34,7 +34,8 @@
         .promo-text {
             display: inline-block; /* Agar bisa digerakkan sebagai satu blok */
             padding-left: 100%; /* Memulai teks dari luar layar */
-            animation: scroll-promo 30s linear infinite; /* Durasi, tipe, dan pengulangan */
+            /* KECEPATAN TEKS BERGERAK: Semakin besar angkanya (misal 90s), semakin lambat gerakannya */
+            animation: scroll-promo 60s linear infinite; /* Durasi, tipe, dan pengulangan */
         }
 
         .promo-text span {
@@ -105,6 +106,7 @@
             scroll-snap-type: x mandatory;
             gap: 20px;
             padding-bottom: 10px;
+            justify-content: center; /* Untuk memusatkan kartu jika ada ruang kosong */
         }
 
         .card {
@@ -116,6 +118,9 @@
             transition: 0.3s;
             color: #000;
             scroll-snap-align: start;
+            display: flex; /* Mengubah card menjadi flex container */
+            flex-direction: column; /* Mengatur item di dalam card menjadi kolom */
+            justify-content: space-between; /* Untuk mendorong tombol ke bawah */
         }
 
         .card:hover {
@@ -131,39 +136,70 @@
         .card-body {
             padding: 15px;
             text-align: center;
+            flex-grow: 1; /* Agar body mengambil ruang yang tersedia */
+            display: flex; /* Untuk menata elemen di dalam card-body */
+            flex-direction: column;
+            justify-content: space-between; /* Untuk merata atas/bawah jika perlu */
         }
 
         .card-title {
             font-size: 18px;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 10px 0 5px; /* Sesuaikan margin atas/bawah */
         }
 
         .card-volume {
             font-size: 14px;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .card-price {
             color: #28a745;
-            margin-bottom: 10px;
+            font-size: 16px; /* Ukuran harga */
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* --- START: Gaya untuk Tombol Pembelian di Card (BARU) --- */
+        .card-buttons-wrapper {
+            display: flex; /* Membuat tombol berdampingan */
+            gap: 10px; /* Jarak antar tombol */
+            padding: 0 15px 15px; /* Padding di sekitar wrapper tombol */
+            justify-content: center; /* Memusatkan tombol */
+            margin-top: auto; /* Memastikan wrapper berada di bagian bawah card-body */
         }
 
         .card-btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
+            flex: 1; /* Membuat tombol mengisi ruang yang sama */
+            display: block;
+            text-align: center;
+            padding: 10px 10px; /* Sesuaikan padding */
             border-radius: 6px;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px; /* Ukuran font tombol */
             cursor: pointer;
+            color: white; /* Warna teks putih untuk semua tombol */
+            white-space: nowrap; /* Mencegah teks tombol patah baris */
         }
 
-        .card-btn:hover {
-            background-color: #0056b3;
+        .card-btn.shopee-btn {
+            background-color: #ee4d2d; /* Warna Shopee */
         }
+
+        .card-btn.shopee-btn:hover {
+            background-color: #d13d21;
+        }
+
+        .card-btn.whatsapp-btn {
+            background-color: #25d366; /* Warna WhatsApp */
+        }
+
+        .card-btn.whatsapp-btn:hover {
+            background-color: #1ea34b;
+        }
+        /* --- END: Gaya untuk Tombol Pembelian di Card (BARU) --- */
+
 
         /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
         .hero-section-image {
@@ -192,7 +228,7 @@
 
         .footer p {
             margin: 5px 0;
-            color: #ccc; /* Pastikan paragraf juga berwarna terang */
+            color: #ccc;
         }
 
         .footer a {
@@ -207,16 +243,15 @@
 
         .footer .social-icons {
             margin-top: 15px;
-            margin-bottom: 15px; /* Jarak antara ikon sosial dan teks di bawahnya */
+            margin-bottom: 15px;
         }
 
         .footer .social-icons a {
             display: inline-block;
             margin: 0 8px;
             color: #fff;
-            font-size: 24px; /* Ukuran ikon */
+            font-size: 24px;
             text-decoration: none;
-            /* Menggunakan filter untuk mengubah warna ikon jika diperlukan, agar putih di latar belakang gelap */
             filter: brightness(0) invert(1);
         }
         /* --- END: CSS untuk Footer (BARU) --- */
@@ -245,16 +280,21 @@
     <section class="hero-section-image">
         <img src="baner golden.jpg" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
     </section>
+
     <div class="produk-section-forst">
         <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
         <div class="produk-container">
+
             <div class="card">
                 <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
                 <div class="card-body">
                     <div class="card-title">Regular</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 55.000</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Regular%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Regular%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -264,7 +304,10 @@
                     <div class="card-title">Classic Forst</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Classic%20Forst%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Classic%20Forst%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -274,22 +317,29 @@
                     <div class="card-title">Mini Forst</div>
                     <div class="card-volume">15 ml</div>
                     <div class="card-price">Rp 29.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Mini%20Forst%2015%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Mini%20Forst%27%2015%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
+
         </div>
     </div>
-
     <div class="produk-section">
         <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
         <div class="produk-container">
+
             <div class="card">
                 <img src="summerblack.jpg" alt="Summer Black" />
                 <div class="card-body">
                     <div class="card-title">Summer Black</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Summer%20Black%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Summer%20Black%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -299,7 +349,10 @@
                     <div class="card-title">S.O.T.B</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20S.O.T.B%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27S.O.T.B%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -309,7 +362,10 @@
                     <div class="card-title">Sky Pulse</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Sky%20Pulse%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Sky%20Pulse%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -319,7 +375,10 @@
                     <div class="card-title">Axion Creed</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Axion%20Creed%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Axion%20Creed%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -329,7 +388,10 @@
                     <div class="card-title">Pink Chiffon</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 69.900</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Pink%20Chiffon%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Pink%20Chiffon%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -339,12 +401,14 @@
                     <div class="card-title">Scandalous</div>
                     <div class="card-volume">30 ml</div>
                     <div class="card-price">Rp 55.000</div>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Scandalous%2030%20ml" class="card-btn">Pesan Sekarang</a>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Scandalous%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <p>
             Forst Parfume &copy; 2025. All rights reserved.
