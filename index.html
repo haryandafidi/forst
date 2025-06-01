@@ -1,261 +1,375 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forst Parfume</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-image: url('bg3.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
-      background-size: cover;
-      background-position: center;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forst Parfume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('bg3.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
 
-    .content {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: transparent;
-    }
+    /* --- START: CSS untuk Promo Berita Bergerak --- */
+    .promo-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan agar kontras dengan gambar latar */
+      padding: 10px 0;
+      border-bottom: 1px solid #555;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Efek bayangan teks */
+      margin-bottom: 20px; /* Jarak antara promo dan konten di bawahnya */
+    }
 
-    h1 {
-      margin-bottom: 10px;
-    }
+    .promo-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-promo 30s linear infinite; /* Durasi, tipe, dan pengulangan */
+    }
 
-    p {
-      margin-bottom: 30px;
-    }
+    .promo-text span {
+      margin-right: 120px; /* Jarak antar kalimat. Sesuaikan sesuai kebutuhan */
+      display: inline-block; /* Penting untuk margin-right berfungsi */
+      font-weight: bold;
+    }
 
-    .button {
-      display: block;
-      width: 250px;
-      text-align: center;
-      padding: 15px;
-      margin: 10px auto;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      color: #fff;
-      cursor: pointer;
-      text-decoration: none;
-    }
+    @keyframes scroll-promo {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 0);
+      }
+    }
+    /* --- END: CSS untuk Promo Berita Bergerak --- */
 
-    .instagram {
-      background: #c13584;
-    }
-    .shopee {
-      background: #ee4d2d;
-    }
-    .whatsapp {
-      background: #25d366;
-    }
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: transparent;
+    }
 
-    .produk-section-forst, .produk-section {
-      padding: 40px 20px;
-      background-image: url('bg2.jpg'); /* Pastikan bg2.jpg ada di lokasi yang benar */
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-    }
+    h1 {
+      margin-bottom: 10px;
+    }
 
-    .produk-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding-bottom: 10px;
-    }
+    p {
+      margin-bottom: 30px;
+    }
 
-    .card {
-      min-width: 250px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: 0.3s;
-      color: #000;
-      scroll-snap-align: start;
-    }
+    .button {
+      display: block;
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      margin: 10px auto;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .instagram {
+      background: #c13584;
+    }
+    .shopee {
+      background: #ee4d2d;
+    }
+    .whatsapp {
+      background: #25d366;
+    }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+    .produk-section-forst, .produk-section {
+      padding: 40px 20px;
+      background-image: url('bg2.jpg'); /* Pastikan bg2.jpg ada di lokasi yang benar */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
 
-    .card-body {
-      padding: 15px;
-      text-align: center;
-    }
+    .produk-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding-bottom: 10px;
+    }
 
-    .card-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+    .card {
+      min-width: 250px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: 0.3s;
+      color: #000;
+      scroll-snap-align: start;
+    }
 
-    .card-volume {
-      font-size: 14px;
-      color: #333;
-      margin-bottom: 8px;
-    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-    .card-price {
-      color: #28a745;
-      margin-bottom: 10px;
-    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-    .card-btn {
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      cursor: pointer;
-    }
+    .card-body {
+      padding: 15px;
+      text-align: center;
+    }
 
-    .card-btn:hover {
-      background-color: #0056b3;
-    }
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
 
-    /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
-    .hero-section-image {
-        width: 100%;       /* Pastikan kontainer mengambil lebar penuh */
-        overflow: hidden;  /* Mencegah scrollbar jika gambar terlalu besar */
-        /* Anda bisa menambahkan padding-top/bottom jika ingin ada jarak di atas/bawah gambar */
-        /* padding: 20px 0; */
-    }
+    .card-volume {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 8px;
+    }
 
-    .hero-section-image img {
-        display: block;    /* Menghilangkan spasi ekstra di bawah gambar */
-        width: 100%;       /* Membuat gambar mengisi lebar penuh kontainer */
-        height: auto;      /* Mempertahankan rasio aspek gambar */
-        max-width: 100%;   /* Memastikan gambar tidak melebihi lebar aslinya jika kontainer lebih besar */
-    }
-    /* --- AKHIR KODE CSS UNTUK HERO SECTION --- */
+    .card-price {
+      color: #28a745;
+      margin-bottom: 10px;
+    }
 
-  </style>
+    .card-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .card-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
+    .hero-section-image {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-section-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    /* --- AKHIR KODE CSS UNTUK HERO SECTION --- */
+
+    /* --- START: CSS untuk Footer --- */
+    .footer {
+        background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
+        color: #ccc; /* Warna teks terang */
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 14px;
+        border-top: 1px solid #333; /* Garis pemisah di atas footer */
+        margin-top: 40px; /* Jarak dari konten di atasnya */
+    }
+
+    .footer p {
+        margin: 5px 0;
+        color: #ccc; /* Pastikan paragraf juga berwarna terang */
+    }
+
+    .footer a {
+        color: #007bff; /* Warna tautan */
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
+    .footer .social-icons {
+        margin-top: 15px;
+        margin-bottom: 15px; /* Jarak antara ikon sosial dan teks di bawahnya */
+    }
+
+    .footer .social-icons a {
+        display: inline-block;
+        margin: 0 8px;
+        color: #fff;
+        font-size: 24px; /* Ukuran ikon */
+        text-decoration: none;
+        /* Menggunakan filter untuk mengubah warna ikon jika diperlukan */
+        filter: brightness(0) invert(1); /* Untuk ikon hitam putih agar jadi putih */
+    }
+    /* --- END: CSS untuk Footer --- */
+
+  </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Forst Parfume</h1>
-    <p>Temukan aroma terbaik dari kami</p>
+    <div class="promo-container">
+    <div class="promo-text">
+      <span>🎉 Promo Spesial: Dapatkan GRATIS ongkir untuk pembelian di atas Rp 200.000!</span>
+      <span>✨ Stok Terbatas: Aroma terbaru 'Midnight Elegance' kini tersedia!</span>
+      <span>🎁 Gabung Reseller: Raih keuntungan menarik hingga 30%! Info lebih lanjut hubungi admin.</span>
+      <span>🌟 Diskon 15% untuk pembelian pertama via WhatsApp!</span>
+      <span>🔥 Jangan lewatkan penawaran terbaik bulan ini, hanya di Forst Parfume!</span>
+    </div>
+  </div>
+    <div class="content">
+    <h1>Forst Parfume</h1>
+    <p>Temukan aroma terbaik dari kami</p>
 
-    <a href="https://www.instagram.com/Forst_hs" target="_blank" class="button instagram">Instagram</a>
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="button shopee">Shopee</a>
-    <a href="https://wa.me/6281396058382" target="_blank" class="button whatsapp">Hubungi Admin (WhatsApp)</a>
-  </div>
+    <a href="https://www.instagram.com/Forst_hs" target="_blank" class="button instagram">Instagram</a>
+    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="button shopee">Shopee</a>
+    <a href="https://wa.me/6281396058382" target="_blank" class="button whatsapp">Hubungi Admin (WhatsApp)</a>
+  </div>
 
-  <section class="hero-section-image">
-      <img src="baner golden.jpg" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
-  </section>
-  <div class="produk-section-forst">
-    <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
-    <div class="produk-container">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
-        <div class="card-body">
-          <div class="card-title">Regular</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Regular%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+  <section class="hero-section-image">
+      <img src="baner golden.jpg" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
+  </section>
+  <div class="produk-section-forst">
+    <h2 style="text-align:center; margin-bottom: 30px;">Brand Forst</h2>
+    <div class="produk-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=New+Product+1" alt="Regular" />
+        <div class="card-body">
+          <div class="card-title">Regular</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 55.000</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Regular%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="sotb1.jpg" alt="Classic Forst" />
-        <div class="card-body">
-          <div class="card-title">Classic Forst</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Classic%20Forst%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <div class="card">
+        <img src="sotb1.jpg" alt="Classic Forst" />
+        <div class="card-body">
+          <div class="card-title">Classic Forst</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Classic%20Forst%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="miniforst.jpg" alt="Mini Forst" />
-        <div class="card-body">
-          <div class="card-title">Mini Forst</div>
-          <div class="card-volume">15 ml</div>
-          <div class="card-price">Rp 29.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Mini%20Forst%2015%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
+      <div class="card">
+        <img src="miniforst.jpg" alt="Mini Forst" />
+        <div class="card-body">
+          <div class="card-title">Mini Forst</div>
+          <div class="card-volume">15 ml</div>
+          <div class="card-price">Rp 29.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Mini%20Forst%2015%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="produk-section">
-    <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
-    <div class="produk-container">
-      <div class="card">
-        <img src="summerblack.jpg" alt="Summer Black" />
-        <div class="card-body">
-          <div class="card-title">Summer Black</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Summer%20Black%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+  <div class="produk-section">
+    <h2 style="text-align:center; margin-bottom: 30px;">Produk Unggulan</h2>
+    <div class="produk-container">
+      <div class="card">
+        <img src="summerblack.jpg" alt="Summer Black" />
+        <div class="card-body">
+          <div class="card-title">Summer Black</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Summer%20Black%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="sotb1.jpg" alt="S.O.T.B" />
-        <div class="card-body">
-          <div class="card-title">S.O.T.B</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20S.O.T.B%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <div class="card">
+        <img src="sotb1.jpg" alt="S.O.T.B" />
+        <div class="card-body">
+          <div class="card-title">S.O.T.B</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20S.O.T.B%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="skypulse1.jpg" alt="Sky Pulse" />
-        <div class="card-body">
-          <div class="card-title">Sky Pulse</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Sky%20Pulse%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <div class="card">
+        <img src="skypulse1.jpg" alt="Sky Pulse" />
+        <div class="card-body">
+          <div class="card-title">Sky Pulse</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Sky%20Pulse%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="axioncreed.jpg" alt="Axion Creed" />
-        <div class="card-body">
-          <div class="card-title">Axion Creed</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Axion%20Creed%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <div class="card">
+        <img src="axioncreed.jpg" alt="Axion Creed" />
+        <div class="card-body">
+          <div class="card-title">Axion Creed</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Axion%20Creed%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon" />
-        <div class="card-body">
-          <div class="card-title">Pink Chiffon</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 69.900</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Pink%20Chiffon%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Pink Chiffon" />
+        <div class="card-body">
+          <div class="card-title">Pink Chiffon</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 69.900</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Pink%20Chiffon%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
 
-      <div class="card">
-        <img src="SCANDALOUS.jpg" alt="Scandalous" />
-        <div class="card-body">
-          <div class="card-title">Scandalous</div>
-          <div class="card-volume">30 ml</div>
-          <div class="card-price">Rp 55.000</div>
-          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Scandalous%2030%20ml" class="card-btn">Pesan Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+      <div class="card">
+        <img src="SCANDALOUS.jpg" alt="Scandalous" />
+        <div class="card-body">
+          <div class="card-title">Scandalous</div>
+          <div class="card-volume">30 ml</div>
+          <div class="card-price">Rp 55.000</div>
+          <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20ingin%20memesan%20Scandalous%2030%20ml" class="card-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer class="footer">
+    <p>
+            Forst Parfume &copy; 2025. All rights reserved.
+    </p>
+    <p>
+            Temukan aroma terbaik dan bergabunglah dengan komunitas kami!
+    </p>
+    <div class="social-icons">
+                  <a href="https://www.instagram.com/Forst_hs" target="_blank" title="Ikuti kami di Instagram">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" style="vertical-align: middle;">
+      </a>
+      <a href="https://shopee.co.id/Tokosiniajala" target="_blank" title="Kunjungi toko kami di Shopee">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/shopee.png" alt="Shopee" style="vertical-align: middle;">
+      </a>
+      <a href="https://wa.me/6281396058382" target="_blank" title="Hubungi kami via WhatsApp">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp--v1.png" alt="WhatsApp" style="vertical-align: middle;">
+      </a>
+    </div>
+    <p>
+            <a href="#" title="Baca Kebijakan Privasi kami">Kebijakan Privasi</a> |
+      <a href="#" title="Baca Syarat & Ketentuan kami">Syarat & Ketentuan</a>
+    </p>
+    <p>
+            Lokasi: Medan, Sumatera Utara, Indonesia
+    </p>
+  </footer>
+  </body>
 </html>
