@@ -15,32 +15,31 @@
             color: #fff;
         }
 
-        /* --- START: CSS untuk Promo Berita Bergerak (BARU) --- */
+        /* --- START: CSS untuk Promo Berita Bergerak --- */
         .promo-container {
             width: 100%;
-            overflow: hidden; /* Penting agar teks yang bergerak tidak terlihat di luar area */
-            white-space: nowrap; /* Mencegah teks melipat ke baris baru */
+            overflow: hidden;
+            white-space: nowrap;
             box-sizing: border-box;
-            background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px 0;
             border-bottom: 1px solid #555;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 15px;
             color: #fff;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            margin-bottom: 20px; /* Jarak antara promo dan konten di bawahnya */
+            margin-bottom: 20px;
         }
 
         .promo-text {
-            display: inline-block; /* Agar bisa digerakkan sebagai satu blok */
-            padding-left: 100%; /* Memulai teks dari luar layar */
-            /* KECEPATAN TEKS BERGERAK: Semakin besar angkanya (misal 90s), semakin lambat gerakannya */
-            animation: scroll-promo 90s linear infinite; /* Durasi, tipe, dan pengulangan */
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-promo 90s linear infinite; /* Sesuaikan kecepatan di sini (e.g., 60s, 120s) */
         }
 
         .promo-text span {
-            margin-right: 120px; /* Jarak antar kalimat. Sesuaikan sesuai kebutuhan */
-            display: inline-block; /* Penting untuk margin-right berfungsi */
+            margin-right: 120px;
+            display: inline-block;
             font-weight: bold;
         }
 
@@ -49,10 +48,10 @@
                 transform: translate(0, 0);
             }
             100% {
-                transform: translate(-100%, 0); /* Menggerakkan teks ke kiri hingga tidak terlihat */
+                transform: translate(-100%, 0);
             }
         }
-        /* --- END: CSS untuk Promo Berita Bergerak (BARU) --- */
+        /* --- END: CSS untuk Promo Berita Bergerak --- */
 
         .content {
             text-align: center;
@@ -106,7 +105,7 @@
             scroll-snap-type: x mandatory;
             gap: 20px;
             padding-bottom: 10px;
-            justify-content: center; /* Untuk memusatkan kartu jika ada ruang kosong */
+            justify-content: center;
         }
 
         .card {
@@ -118,9 +117,9 @@
             transition: 0.3s;
             color: #000;
             scroll-snap-align: start;
-            display: flex; /* Mengubah card menjadi flex container */
-            flex-direction: column; /* Mengatur item di dalam card menjadi kolom */
-            justify-content: space-between; /* Untuk mendorong tombol ke bawah */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -136,16 +135,16 @@
         .card-body {
             padding: 15px;
             text-align: center;
-            flex-grow: 1; /* Agar body mengambil ruang yang tersedia */
-            display: flex; /* Untuk menata elemen di dalam card-body */
+            flex-grow: 1;
+            display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Untuk merata atas/bawah jika perlu */
+            justify-content: space-between;
         }
 
         .card-title {
             font-size: 18px;
             font-weight: bold;
-            margin: 10px 0 5px; /* Sesuaikan margin atas/bawah */
+            margin: 10px 0 5px;
         }
 
         .card-volume {
@@ -156,35 +155,35 @@
 
         .card-price {
             color: #28a745;
-            font-size: 16px; /* Ukuran harga */
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
-        /* --- START: Gaya untuk Tombol Pembelian di Card (BARU) --- */
+        /* --- START: Gaya untuk Tombol Pembelian di Card --- */
         .card-buttons-wrapper {
-            display: flex; /* Membuat tombol berdampingan */
-            gap: 10px; /* Jarak antar tombol */
-            padding: 0 15px 15px; /* Padding di sekitar wrapper tombol */
-            justify-content: center; /* Memusatkan tombol */
-            margin-top: auto; /* Memastikan wrapper berada di bagian bawah card-body */
+            display: flex;
+            gap: 10px;
+            padding: 0 15px 15px;
+            justify-content: center;
+            margin-top: auto;
         }
 
         .card-btn {
-            flex: 1; /* Membuat tombol mengisi ruang yang sama */
+            flex: 1;
             display: block;
             text-align: center;
-            padding: 10px 10px; /* Sesuaikan padding */
+            padding: 10px 10px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 13px; /* Ukuran font tombol */
+            font-size: 13px;
             cursor: pointer;
-            color: white; /* Warna teks putih untuk semua tombol */
-            white-space: nowrap; /* Mencegah teks tombol patah baris */
+            color: white;
+            white-space: nowrap;
         }
 
         .card-btn.shopee-btn {
-            background-color: #ee4d2d; /* Warna Shopee */
+            background-color: #ee4d2d;
         }
 
         .card-btn.shopee-btn:hover {
@@ -192,38 +191,45 @@
         }
 
         .card-btn.whatsapp-btn {
-            background-color: #25d366; /* Warna WhatsApp */
+            background-color: #25d366;
         }
 
         .card-btn.whatsapp-btn:hover {
             background-color: #1ea34b;
         }
-        /* --- END: Gaya untuk Tombol Pembelian di Card (BARU) --- */
+        /* --- END: Gaya untuk Tombol Pembelian di Card --- */
 
-
-        /* --- MULAI KODE CSS UNTUK HERO SECTION (GAMBAR PENUH) --- */
+        /* --- MULAI KODE CSS UNTUK HERO SECTION (VIDEO PENUH) --- */
         .hero-section-image {
             width: 100%;
             overflow: hidden;
+            position: relative;
+            height: auto;
+            max-height: 500px; /* Batasi tinggi maksimum untuk video */
+            background-color: #000; /* Warna latar belakang jika video belum load */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-section-image img {
-            display: block;
+        .hero-section-image video {
             width: 100%;
             height: auto;
-            max-width: 100%;
+            max-height: 500px; /* Sesuaikan dengan max-height parent */
+            object-fit: cover; /* Video akan mengisi area dan memotong jika rasio tidak cocok */
+            display: block;
         }
         /* --- AKHIR KODE CSS UNTUK HERO SECTION --- */
 
-        /* --- START: CSS untuk Footer (BARU) --- */
+        /* --- START: CSS untuk Footer --- */
         .footer {
-            background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
-            color: #ccc; /* Warna teks terang */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ccc;
             text-align: center;
             padding: 30px 20px;
             font-size: 14px;
-            border-top: 1px solid #333; /* Garis pemisah di atas footer */
-            margin-top: 40px; /* Jarak dari konten di atasnya */
+            border-top: 1px solid #333;
+            margin-top: 40px;
         }
 
         .footer p {
@@ -232,7 +238,7 @@
         }
 
         .footer a {
-            color: #007bff; /* Warna tautan */
+            color: #007bff;
             text-decoration: none;
             margin: 0 10px;
         }
@@ -254,7 +260,7 @@
             text-decoration: none;
             filter: brightness(0) invert(1);
         }
-        /* --- END: CSS untuk Footer (BARU) --- */
+        /* --- END: CSS untuk Footer --- */
 
     </style>
 </head>
@@ -278,7 +284,10 @@
     </div>
 
     <section class="hero-section-image">
-        <img src="goldenvidio2.mp4" alt="Ingin Berbisnis Parfum? Daftar Reseller Forst Parfume dan Mulai Hasilkan Uang kalian">
+        <video autoplay muted loop playsinline>
+            <source src="goldenvidio2.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
     </section>
 
     <div class="produk-section-forst">
@@ -307,7 +316,7 @@
                 </div>
                 <div class="card-buttons-wrapper">
                     <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Classic%20Forst%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Classic%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
                 </div>
             </div>
 
@@ -435,5 +444,5 @@
             Lokasi: Medan, Sumatera Utara, Indonesia
         </p>
     </footer>
-    </body>
+</body>
 </html>
