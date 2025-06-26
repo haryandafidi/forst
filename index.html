@@ -122,8 +122,10 @@
             /* justify-content: center; */ /* Ini bisa menyebabkan item terakhir terpotong jika total lebar tidak pas dengan layar */
             -webkit-overflow-scrolling: touch; 
         }
-        .produk-container > .card:first-child {
-            margin-left: 20px;
+       .produk-container::before {
+            content: "";
+            flex: 0 0 20px; /* Ukuran spasi kiri */
+        }
         }
 
         .card {
