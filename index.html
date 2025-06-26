@@ -15,7 +15,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-image: url('bg2.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
+            background-image: url('bg3.jpg'); /* Pastikan bg3.jpg ada di lokasi yang benar */
             background-size: cover;
             background-position: center;
             margin: 0;
@@ -99,19 +99,29 @@
             background: #25d366;
         }
 
+        .produk-section-forst, .produk-section {
+            padding: 40px 0; /* Padding vertikal tetap, horizontal dihilangkan karena ada di .produk-container */
+            background-image: url('bg2.jpg'); /* Pastikan bg2.jpg ada di lokasi yang benar */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .produk-section-forst h2, .produk-section h2 {
+            padding: 0 20px; /* Tambahkan padding ke judul agar tidak terlalu mepet tepi */
+            margin-bottom: 30px;
+        }
+
+
         .produk-container {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 20px;
-            padding: 0 20px 10px 0px; 
-            justify-content: flex-start; 
-            /* justify-content: center; 
-       
-        .produk-container > .card:first-child {
-            margin-left: 20px;
+            padding: 0 20px 10px 0px; /* **PERUBAHAN PENTING DI SINI** */
+            justify-content: flex-start; /* **PERUBAHAN PENTING DI SINI: Mulai dari kiri** */
+            /* justify-content: center; */ /* Ini bisa menyebabkan item terakhir terpotong jika total lebar tidak pas dengan layar */
+            -webkit-overflow-scrolling: touch; 
         }
-
 
         .card {
             min-width: 250px;
@@ -165,10 +175,6 @@
             font-weight: bold;
             margin-bottom: 15px;
         }
-     
-          .card:first-child {
-            margin-left: 16px;
-          }
 
         /* --- START: Gaya untuk Tombol Pembelian di Card --- */
         .card-buttons-wrapper {
