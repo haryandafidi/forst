@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -89,9 +90,15 @@
             text-decoration: none;
         }
 
-        .instagram {background: #c13584;}
-        .shopee {background: #ee4d2d;}
-        .whatsapp {background: #25d366;}
+        .instagram {
+            background: #c13584;
+        }
+        .shopee {
+            background: #ee4d2d;
+        }
+        .whatsapp {
+            background: #25d366;
+        }
 
         .produk-section-forst, .produk-section {
             padding: 40px 0; /* Padding vertikal tetap, horizontal dihilangkan karena ada di .produk-container */
@@ -192,45 +199,22 @@
             white-space: nowrap;
         }
 
-        .card-btn.shopee-btn {background-color: #ee4d2d;}
-        .card-btn.shopee-btn:hover {background-color: #d13d21;}
-        .card-btn.whatsapp-btn {background-color: #25d366;}
-        .card-btn.whatsapp-btn:hover {background-color: #1ea34b;}
-        .card-btn.view-btn {background-color: #007bff;}
-        .card-btn.view-btn:hover {background-color: #0056b3;}
-
-          .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
+        .card-btn.shopee-btn {
+            background-color: #ee4d2d;
         }
 
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            color: #000;
+        .card-btn.shopee-btn:hover {
+            background-color: #d13d21;
         }
 
-        .modal-content img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+        .card-btn.whatsapp-btn {
+            background-color: #25d366;
         }
 
-        .close {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+        .card-btn.whatsapp-btn:hover {
+            background-color: #1ea34b;
         }
+        
         .footer {
             background-color: rgba(0, 0, 0, 0.8);
             color: #ccc;
@@ -377,19 +361,9 @@
                 <div class="card-buttons-wrapper">
                     <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
                     <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Sky%20Pulse%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-                    <button class="card-btn view-btn" onclick="openModal('skyPulseModal')">View Produk</button>
-               <div id="modal-container">
-  <div id="skyPulseModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('skyPulseModal')">&times;</span>
-      <img src="skypulse1.jpg" alt="Sky Pulse">
-      <h3>Sky Pulse</h3>
-      <p><strong>Aroma:</strong> Citrus, Fresh, Musk</p>
-      <p><strong>Ketahanan:</strong> 8-12 jam</p>
-      <p>Parfum segar yang cocok untuk pria dan wanita aktif. Tahan lama hingga 12 jam.</p>
-    </div>
-  </div>
-                   
+                </div>
+            </div>
+
             <div class="card">
                 <img src="axioncreed.jpg" alt="Axion Creed" />
                 <div class="card-body">
@@ -437,13 +411,6 @@
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script>
-                function openModal(id) {
-    document.getElementById(id).style.display = "block";
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
 </script>
 </div>
 
