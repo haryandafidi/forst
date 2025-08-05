@@ -271,34 +271,6 @@
   max-width: 95%;       
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-        .modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.modal-content h2 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-.modal-content p {
-  margin: 4px 0;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #000;
-}
-
 
         /* --- END: CSS untuk Footer --- */
 
@@ -387,111 +359,119 @@
         <h2 style="text-align:center;">Produk Unggulan</h2>
         <div class="produk-container">
 
-          <div id="cardModal" class="modal" style="display: none;" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close" onclick="closeModal()">×</span>
-    <img id="modalImage" src="" alt="Gambar" />
-    <div id="modalBody"></div>
-  </div>
-</div>
+            <div class="card">
+                <img src="summerblack.jpg" alt="Summer Black" />
+                 <div class="badge">🔥 Best Seller</div>
+                <div class="card-body">
+                    <div class="card-title">Summer Black</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 69.900</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Summer%20Black%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                  <button class="btn-info" onclick="openAromaModal('SUMMER BLACK', 
+                  '<b>Top Note:</b> Bergamot memberikan kesan segar dan sedikit citrus pada fase awal parfum.<br>' +
+                  '<b>Middle Note:</b> Melati dan dupa memberikan aroma bunga yang elegan dan hangat, dikombinasikan dengan aroma smoky dari dupa.<br>' +
+                  '<b>Base Note:</b>Ambroxan, benzoin, kayu-kayuan, dan vanila memberikan aroma manis, hangat, dan sedikit powdery yang tahan lama.<br><br>' +
+                  'Parfum ini cocok untuk acara malam hari atau cuaca dingin karena kehangatan aromanya.')">⋯</button>
 
+                </div>
+             </div>    
+            
+            <div class="card">
+                <img src="sotb1.jpg" alt="S.O.T.B" />
+                 <div class="badge">🔥 Best Seller</div>
+                <div class="card-body">
+                    <div class="card-title">S.O.T.B</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 69.900</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27S.O.T.B%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                   <button class="btn-info" onclick="openAromaModal('S.O.T.B', 
+                  '<b>Top Note:</b> Mandarin memberikan aroma segar dan ceria, sedangkan Galbanum memberikan sentuhan hijau yang alami.<br>' +
+                  '<b>Middle Note:</b> Tuberose dan Jasmine menghadirkan aroma bunga yang manis dan elegan.<br>' +
+                  '<b>Base Note:</b> Vanilla, Tonka Bean, dan Musk memberikan kehangatan, kelembutan, dan daya tahan aroma yang lama.<br><br>' +
+                  'Aroma S.O.T.B secara keseluruhan menciptakan kesan tropis yang menyegarkan dan ceria, mengingatkan pada suasana pantai dengan sentuhan manis dan hangat dari vanilla dan tonka bean. ')">⋯</button>
 
-           <div class="card" data-deskripsi="bergamot citrus melati dupa ambroxan benzoin kayu vanila malam dingin hangat">
-  <img src="summerblack.jpg" alt="Summer Black" />
-  <div class="badge">🔥 Best Seller</div>
-  <div class="card-body">
-    <div class="card-title">Summer Black</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 69.900</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Summer%20Black%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('SUMMER BLACK', '<b>Top Note:</b> Bergamot memberikan kesan segar dan sedikit citrus pada fase awal parfum.<br><b>Middle Note:</b> Melati dan dupa memberikan aroma bunga yang elegan dan hangat, dikombinasikan dengan aroma smoky dari dupa.<br><b>Base Note:</b>Ambroxan, benzoin, kayu-kayuan, dan vanila memberikan aroma manis, hangat, dan sedikit powdery yang tahan lama.<br><br>Parfum ini cocok untuk acara malam hari atau cuaca dingin karena kehangatan aromanya.')">⋯</button>
-  </div>
-</div>
+                </div>
+            </div>
 
-<div class="card" data-deskripsi="mandarin galbanum tuberose jasmine vanilla tonka musk tropis pantai">
-  <img src="sotb1.jpg" alt="S.O.T.B" />
-  <div class="badge">🔥 Best Seller</div>
-  <div class="card-body">
-    <div class="card-title">S.O.T.B</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 69.900</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27S.O.T.B%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('S.O.T.B', '<b>Top Note:</b> Mandarin memberikan aroma segar dan ceria, sedangkan Galbanum memberikan sentuhan hijau yang alami.<br><b>Middle Note:</b> Tuberose dan Jasmine menghadirkan aroma bunga yang manis dan elegan.<br><b>Base Note:</b> Vanilla, Tonka Bean, dan Musk memberikan kehangatan, kelembutan, dan daya tahan aroma yang lama.<br><br>Aroma S.O.T.B secara keseluruhan menciptakan kesan tropis yang menyegarkan dan ceria, mengingatkan pada suasana pantai dengan sentuhan manis dan hangat dari vanilla dan tonka bean.')">⋯</button>
-  </div>
-</div>
+            <div class="card">
+                <img src="skypulse1.jpg" alt="Sky Pulse" />
+                <div class="card-body">
+                    <div class="card-title">Sky Pulse</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 69.900</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Sky%20Pulse%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                     <button class="btn-info" onclick="openAromaModal('Sky Pulse', 
+                  '<b>Top Note:</b> Citrus (segar), blackcurrant (manis dan sedikit asam).<br>' +
+                  '<b>Middle Note:</b> Jasmine (floral lembut).<br>' +
+                  '<b>Base Note:</b>Musk (hangat, tahan lama). <br><br>' +
+                  'Secara keseluruhan, parfum "Sky Pulse" menawarkan aroma yang segar, elegan, dan sedikit manis, cocok untuk penggunaan sehari-hari maupun acara khusus. ')">⋯</button>
+                </div>
+            </div>
 
-<div class="card" data-deskripsi="citrus blackcurrant jasmine musk segar elegan manis harian acara">
-  <img src="skypulse1.jpg" alt="Sky Pulse" />
-  <div class="card-body">
-    <div class="card-title">Sky Pulse</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 69.900</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Sky%20Pulse%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('Sky Pulse', '<b>Top Note:</b> Citrus (segar), blackcurrant (manis dan sedikit asam).<br><b>Middle Note:</b> Jasmine (floral lembut).<br><b>Base Note:</b>Musk (hangat, tahan lama). <br><br>Secara keseluruhan, parfum "Sky Pulse" menawarkan aroma yang segar, elegan, dan sedikit manis, cocok untuk penggunaan sehari-hari maupun acara khusus.')">⋯</button>
-  </div>
-</div>
+            <div class="card">
+                <img src="axioncreed.jpg" alt="Axion Creed" />
+                <div class="card-body">
+                    <div class="card-title">Axion Creed</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 69.900</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Axion%20Creed%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                <button class="btn-info" onclick="openAromaModal('Axion Creed', 
+                  '<b>Top Note:</b> Jeruk bali, apel hijau, lemon, lavender, sea notes, bergamot Sisilia, dan lemon. <br>' +
+                  '<b>Middle Note:</b> Gardenia, melati, bunga lili, geranium, cedar, kapulaga, dan kemangi manis. <br>' +
+                  '<b>Base Note:</b> Musk, kayu cendana, tonka bean, nilam, dan amber. <br><br>' +
+                  'Aroma Lamborghini cocok digunakan pada malam hari, cuaca dingin, atau saat menghadiri acara formal.')">⋯</button>
+                </div>
+            </div>
 
-<div class="card" data-deskripsi="jeruk apel lemon lavender gardenia melati lili geranium musk cendana malam dingin formal">
-  <img src="axioncreed.jpg" alt="Axion Creed" />
-  <div class="card-body">
-    <div class="card-title">Axion Creed</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 69.900</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Axion%20Creed%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('Axion Creed', '<b>Top Note:</b> Jeruk bali, apel hijau, lemon, lavender, sea notes, bergamot Sisilia, dan lemon. <br><b>Middle Note:</b> Gardenia, melati, bunga lili, geranium, cedar, kapulaga, dan kemangi manis. <br><b>Base Note:</b> Musk, kayu cendana, tonka bean, nilam, dan amber. <br><br>Aroma Lamborghini cocok digunakan pada malam hari, cuaca dingin, atau saat menghadiri acara formal.')">⋯</button>
-  </div>
-</div>
+            <div class="card">
+                <img src="forst 30 ml.png" alt="Black Opium" />
+                <div class="card-body">
+                    <div class="card-title">Black Opium"</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 55.000</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Pink%20Chiffon%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                    <button class="btn-info" onclick="openAromaModal('Black Opium', 
+                  '<b>Top Note:</b> pear, pink pepper, orange blossom. <br>' +
+                  '<b>Middle Note:</b> coffee, jasmine, bitter almond dan licorice.<br>' +
+                  '<b>Base Note:</b> anilla, patchouli, cashmere wood dan cedar.<br><br>' +
+                  'Aroma Black Opium Elegan banget, cocok buat dipake acara malem/wedding. ')">⋯</button>
+                </div>
+            </div>
 
-<div class="card" data-deskripsi="pear pink pepper orange blossom coffee jasmine almond licorice vanilla patchouli elegan malam wedding">
-  <img src="forst 30 ml.png" alt="Black Opium" />
-  <div class="card-body">
-    <div class="card-title">Black Opium</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 55.000</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Black%20Opium%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('Black Opium', '<b>Top Note:</b> pear, pink pepper, orange blossom. <br><b>Middle Note:</b> coffee, jasmine, bitter almond dan licorice.<br><b>Base Note:</b> vanilla, patchouli, cashmere wood dan cedar.<br><br>Aroma Black Opium Elegan banget, cocok buat dipake acara malem/wedding.')">⋯</button>
-  </div>
-</div>
-
-<div class="card" data-deskripsi="raspberry peony praline santai aktifitas">
-  <img src="regular1.png" alt="Scandalous" />
-  <div class="card-body">
-    <div class="card-title">Scandalous</div>
-    <div class="card-volume">30 ml</div>
-    <div class="card-price">Rp 55.000</div>
-  </div>
-  <div class="card-buttons-wrapper">
-    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
-    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Scandalous%27%2030%20ml." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
-    <button class="btn-info" onclick="openAromaModal('Scandalous', '<b>Top Note:</b> Raspberry.<br><b>Middle Note:</b> Black Peony.<br><b>Base Note:</b> Praline.<br><br>Wangi ini cocok banget buat kamu yang lagi santai beraktifitas.')">⋯</button>
-  </div>
-
-    <div id="cardModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="" style="width: 100%; height: auto;" />
-    <div id="modalBody" style="padding: 15px;"></div>
-  </div>
-</div>
-</div>
- </div
-     
-        
+            <div class="card">
+                <img src="regular1.png" alt="Scandalous" />
+                <div class="card-body">
+                    <div class="card-title">Scandalous</div>
+                    <div class="card-volume">30 ml</div>
+                    <div class="card-price">Rp 55.000</div>
+                </div>
+                <div class="card-buttons-wrapper">
+                    <a href="https://shopee.co.id/Tokosiniajala" target="_blank" class="card-btn shopee-btn">Beli di Shopee</a>
+                    <a href="https://wa.me/6281396058382?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20produk%20Forst%20Parfume%20%27Scandalous%27%2030%20ml.%20Apakah%20stoknya%20tersedia%3F%20Terima%20kasih." target="_blank" class="card-btn whatsapp-btn">Pesan via WA</a>
+                     <button class="btn-info" onclick="openAromaModal('Black Opium', 
+                  '<b>Top Note:</b> Raspberry.<br>' +
+                  '<b>Middle Note:</b> Black Peony.<br>' +
+                  '<b>Base Note:</b>praline.br><br>' +
+                  'Wangi ini cocok banget buat kamu yang lagi santai beraktifitas. ')">⋯</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="aroma-modal" class="modal" style="display: none;">
   <div class="modal-content">
    <span onclick="closeAromaModal()" style="float:right; cursor:pointer;Color: black;">×</span>
@@ -544,36 +524,6 @@ function openAromaModal(title, description) {
 
 function closeAromaModal() {
   document.getElementById('aroma-modal').style.display = 'none';
-}
-        <script>
-function tampilkanModalCard(cardElement) {
-  const image = cardElement.querySelector('img');
-  const title = cardElement.querySelector('.card-title').innerText;
-  const volume = cardElement.querySelector('.card-volume')?.innerText || '';
-  const price = cardElement.querySelector('.card-price')?.innerText || '';
-  const aromaAttr = cardElement.querySelector('.btn-info')?.getAttribute('onclick') || '';
-
-  // Ambil teks dari parameter aroma
-  const match = aromaAttr.match(/,\s*'(.*?)'/s);
-  const aromaText = match ? match[1] : '';
-
-  // Ganti baris baru dan <br> jika ada
-  const cleanText = aromaText.replace(/\+|\\n/g, '').replace(/<br>/g, '<br>');
-
-  // Isi konten modal
-  document.getElementById('modalImage').src = image.src;
-  document.getElementById('modalBody').innerHTML = `
-    <h2>${title}</h2>
-    <p>${volume}</p>
-    <p>${price}</p>
-    <p>${cleanText}</p>
-  `;
-
-  document.getElementById('cardModal').style.display = 'flex';
-}
-
-function closeModal() {
-  document.getElementById('cardModal').style.display = 'none';
 }
 </script>
 </body>
